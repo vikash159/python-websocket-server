@@ -218,8 +218,7 @@ class WebSocketHandler(StreamRequestHandler):
             logger.warn("Continuation frames are not supported.")
             return
         elif opcode == OPCODE_BINARY:
-            logger.warn("Binary frames are not supported.")
-            return
+            opcode_handler = self.server._message_received_
         elif opcode == OPCODE_TEXT:
             opcode_handler = self.server._message_received_
         elif opcode == OPCODE_PING:
@@ -241,8 +240,10 @@ class WebSocketHandler(StreamRequestHandler):
         for message_byte in self.read_bytes(payload_length):
             message_byte ^= masks[len(message_bytes) % 4]
             message_bytes.append(message_byte)
-        opcode_handler(self, message_bytes.decode('utf8'))
-
+	if opcode == OPCODE_BINARY:
+            opcode_handler(self, message_bytes)
+	else:
+	    opcode_handler(self, message_bytes.decode('utf8'))
     def send_message(self, message):
         self.send_text(message)
 
