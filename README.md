@@ -1,7 +1,7 @@
 Websocket Server
 =======================
 
-[![CircleCI](https://circleci.com/gh/Pithikos/python-websocket-server/tree/master.svg?style=svg)](https://circleci.com/gh/Pithikos/python-websocket-server/tree/master)
+[![CircleCI](https://circleci.com/gh/vikash159/python-websocket-server/tree/master.svg?style=svg)](https://circleci.com/gh/vikash159/python-websocket-server/tree/master)
 
 A minimal Websockets Server in Python with no external dependencies.
 
@@ -24,7 +24,7 @@ You can use the project in three ways.
   2. `pip install git+https://github.com/Pithikos/python-websocket-server` (latest code)
   3. `pip install websocket-server` (might not be up-to-date)
 
-For coding details have a look at the [*server.py*](https://github.com/Pithikos/python-websocket-server/blob/master/server.py) example and the [API](https://github.com/Pithikos/python-websocket-server#api).
+For coding details have a look at the [*server.py*](https://github.com/vikash159/python-websocket-server/blob/master/server.py) example and the [API](https://github.com/vikash159/python-websocket-server#api).
 
 
 Usage
